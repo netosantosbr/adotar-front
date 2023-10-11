@@ -1,27 +1,52 @@
-# React + TypeScript + Vite
+# Adotar: Facilitating Animal Adoption
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Adotar is an innovative project that emerged from the need to find a solution to the persistent problem of animal adoption, especially cats and dogs, in various cities where the lack of an efficient public policy hinders resolving this challenge. This initiative aims to create a network that streamlines the adoption process by effectively connecting people who wish to adopt a pet with those seeking a new home for their animals.
 
-Currently, two official plugins are available:
+## Project Description
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The Adotar API was developed using TypeScript and React JS, leveraging the robustness of these technologies to create a powerful and user-friendly platform. Through this API, animal owners who wish to donate their pets and individuals interested in adoption can register and interact in a simple and intuitive manner.
 
-## Expanding the ESLint configuration
+## Utilized Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **TypeScript**
+- **React JS**
+- **Redux**
+- **UI:** Chakra-UI
 
-- Configure the top-level `parserOptions` property like this:
+## Running Locally
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+1. Clone the project
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+    ```bash
+    git clone https://github.com/jpcchaves/adotar-front.git
+    ```
+
+2. Navigate to the project directory
+
+    ```bash
+    cd adotar-front
+    ```
+
+3. Install dependencies
+
+    ```bash
+    npm install
+    ```
+    or
+   ```
+   yarn
+   ```
+
+5. Run the project
+
+    ```bash
+    npm run dev
+    ```
+    or
+   ```
+   yarn dev
+   ```
+
+## Learnings
+
+I learned to use the React JS framework to develop a Frontend application with essential functionalities: fetching data, updating, patching, creating, and deleting resources.
