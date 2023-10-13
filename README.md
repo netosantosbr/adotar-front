@@ -4,7 +4,7 @@ Adotar is an innovative project that emerged from the need to find a solution to
 
 ## Project Description
 
-The Adotar API was developed using TypeScript and React JS, leveraging the robustness of these technologies to create a powerful and user-friendly platform. Through this API, animal owners who wish to donate their pets and individuals interested in adoption can register and interact in a simple and intuitive manner.
+The Adotar API was developed using TypeScript and React JS, leveraging the robustness of these technologies to create a powerful and user-friendly platform. Through this APP, animal owners who wish to donate their pets and individuals interested in adoption can register and interact in a simple and intuitive manner.
 
 ## Utilized Stack
 
