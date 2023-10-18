@@ -7,11 +7,11 @@ const Login = () => {
   const validation = useFormik({
     enableReinitialize: true,
     initialValues: {
-      usernameOrEmail: "",
+      email: "",
       password: "",
     },
     validationSchema: Yup.object().shape({
-      usernameOrEmail: Yup.string()
+      email: Yup.string()
         .email("Informe um email válido")
         .required("O campo é obrigatório"),
       password: Yup.string().required("O campo é obrigatório"),
@@ -19,7 +19,7 @@ const Login = () => {
     onSubmit: (values) => console.log(values),
   });
 
-  return <LoginView />;
+  return <LoginView validation={validation} />;
 };
 
 export default Login;

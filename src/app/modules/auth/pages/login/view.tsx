@@ -15,10 +15,13 @@ import {
 import Logo from "../../components/logo";
 import { PasswordInput } from "../../components/passswordInput";
 import { Link } from "react-router-dom";
+import { FormikValues } from "formik";
 
-interface IProps {}
+interface IProps {
+  validation: FormikValues;
+}
 
-const LoginView: React.FC<IProps> = ({}) => {
+const LoginView: React.FC<IProps> = ({ validation }) => {
   return (
     <Container maxW='lg' py={{ base: "12" }} px={{ base: "0", sm: "8" }}>
       <Stack spacing={"1"}>
@@ -41,24 +44,41 @@ const LoginView: React.FC<IProps> = ({}) => {
           boxShadow={{ base: "none", sm: "xl" }}
           borderRadius={{ base: "none", sm: "xl" }}
         >
-          <Stack spacing='6'>
-            <Stack spacing='5'>
-              <FormControl>
-                <FormLabel htmlFor='email'>Email ou Usuário</FormLabel>
-                <Input id='email' type='email' />
-              </FormControl>
-              <PasswordInput />
-            </Stack>
-            <HStack justify='space-between'>
-              <Checkbox defaultChecked={false}>Lembrar de mim</Checkbox>
-              <Button variant='text' size='sm'>
-                Esqueceu a senha?
-              </Button>
-            </HStack>
+          <form
+            onSubmit={(e: React.FormEvent<HTMLFormElement>) => {
+              e.preventDefault();
+              validation.handleSubmit(e);
+            }}
+          >
             <Stack spacing='6'>
-              <Button>Entrar</Button>
+              <Stack spacing='5'>
+                <FormControl>
+                  <FormLabel htmlFor='email'>Email ou Usuário</FormLabel>
+                  <Input
+                    id='email'
+                    type='email'
+                    value={validation.values.email}
+                    onChange={validation.handleChange}
+                    onBlur={validation.handleBlur}
+                  />
+                </FormControl>
+                <PasswordInput
+                  value={validation.values.password}
+                  onChange={validation.handleChange}
+                  onBlur={validation.handleBlur}
+                />
+              </Stack>
+              <HStack justify='space-between'>
+                <Checkbox defaultChecked={false}>Lembrar de mim</Checkbox>
+                <Button variant='text' size='sm'>
+                  Esqueceu a senha?
+                </Button>
+              </HStack>
+              <Stack spacing='6'>
+                <Button type={"submit"}>Entrar</Button>
+              </Stack>
             </Stack>
-          </Stack>
+          </form>
         </Box>
       </Stack>
     </Container>
