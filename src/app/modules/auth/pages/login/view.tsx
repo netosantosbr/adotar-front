@@ -2,6 +2,7 @@ import React from "react";
 import {
   Box,
   Button,
+  Center,
   Checkbox,
   Container,
   FormControl,
@@ -26,8 +27,10 @@ const LoginView: React.FC<IProps> = ({ validation }) => {
     <Container maxW='lg' py={{ base: "12" }} px={{ base: "0", sm: "8" }}>
       <Stack spacing={"1"}>
         <Stack spacing='6'>
-          <Logo />
-          <Stack spacing={{ base: "2", md: "3" }} textAlign='center'>
+          <Center>
+            <Logo />
+          </Center>
+          <Stack spacing={{ base: "2", md: "3" }} textAlign='center' mb={4}>
             <Heading size={{ base: "xs", md: "sm" }}>
               Realize o login com sua conta
             </Heading>
