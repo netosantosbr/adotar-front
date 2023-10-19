@@ -2,9 +2,8 @@ import React from "react";
 import {
   Box,
   Button,
-  Center,
   Checkbox,
-  Container,
+  Flex,
   FormControl,
   FormLabel,
   Heading,
@@ -13,10 +12,9 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-import Logo from "../../components/logo";
 import { PasswordInput } from "../../components/passswordInput";
-import { Link } from "react-router-dom";
 import { FormikValues } from "formik";
+import AuthLayout from "../../../../layout/auth/AuthLayout";
 
 interface IProps {
   validation: FormikValues;
@@ -24,28 +22,38 @@ interface IProps {
 
 const LoginView: React.FC<IProps> = ({ validation }) => {
   return (
-    <Container maxW='lg' py={{ base: "12" }} px={{ base: "0", sm: "8" }}>
-      <Stack spacing={"1"}>
-        <Stack spacing='6'>
-          <Center>
-            <Logo />
-          </Center>
-          <Stack spacing={{ base: "2", md: "3" }} textAlign='center' mb={4}>
-            <Heading size={{ base: "xs", md: "sm" }}>
-              Realize o login com sua conta
-            </Heading>
-            <Text>
-              Ainda não possui conta?{" "}
-              <Link to='/auth/registro'>Cadastre-se</Link>
-            </Text>
-          </Stack>
-        </Stack>
-        <Box
-          py={{ base: "0", sm: "8" }}
-          px={{ base: "4", sm: "10" }}
-          bg={{ base: "transparent", sm: "bg.surface" }}
-          boxShadow={{ base: "none", sm: "xl" }}
-          borderRadius={{ base: "none", sm: "xl" }}
+    <AuthLayout>
+      <Flex
+        maxW={{ base: "100%", md: "max-content" }}
+        w='100%'
+        mx={{ base: "auto", lg: "0px" }}
+        me='auto'
+        h='100%'
+        alignItems='start'
+        justifyContent='center'
+        mb={{ base: "30px", md: "60px" }}
+        px={{ base: "25px", md: "0px" }}
+        mt={{ base: "40px", md: "14vh" }}
+        flexDirection='column'
+      >
+        <Box me='auto'>
+          <Heading fontSize='36px' mb='10px'>
+            Entrar
+          </Heading>
+          <Text mb='36px' ms='4px' fontWeight='400' fontSize='md'>
+            Insira seu e-mail e senha para acessar!
+          </Text>
+        </Box>
+        <Flex
+          zIndex='2'
+          direction='column'
+          w={{ base: "100%", md: "420px" }}
+          maxW='100%'
+          background='transparent'
+          borderRadius='15px'
+          mx={{ base: "auto", lg: "unset" }}
+          me='auto'
+          mb={{ base: "20px", md: "auto" }}
         >
           <form
             onSubmit={(e: React.FormEvent<HTMLFormElement>) => {
@@ -56,10 +64,10 @@ const LoginView: React.FC<IProps> = ({ validation }) => {
             <Stack spacing='6'>
               <Stack spacing='5'>
                 <FormControl>
-                  <FormLabel htmlFor='email'>Email ou Usuário</FormLabel>
+                  <FormLabel htmlFor='email'>Email</FormLabel>
                   <Input
                     id='email'
-                    type='email'
+                    type='text'
                     value={validation.values.email}
                     onChange={validation.handleChange}
                     onBlur={validation.handleBlur}
@@ -82,9 +90,9 @@ const LoginView: React.FC<IProps> = ({ validation }) => {
               </Stack>
             </Stack>
           </form>
-        </Box>
-      </Stack>
-    </Container>
+        </Flex>
+      </Flex>
+    </AuthLayout>
   );
 };
 
