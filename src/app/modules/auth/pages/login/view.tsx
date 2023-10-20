@@ -86,7 +86,9 @@ const LoginView: React.FC<IProps> = ({ validation }) => {
                 </Button>
               </HStack>
               <Stack spacing='6'>
-                <Button type={"submit"}>Entrar</Button>
+                <Button type={"submit"} colorScheme={"navy"}>
+                  Entrar
+                </Button>
               </Stack>
             </Stack>
           </form>
