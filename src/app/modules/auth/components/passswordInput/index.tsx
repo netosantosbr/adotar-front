@@ -62,7 +62,7 @@ export const PasswordInput: React.FC<IProps> = ({
           name={inputIdentifier}
           id={inputIdentifier}
           value={inputValue}
-          type='text'
+          type={isOpen ? "text" : "password"}
           {...rest}
         />
         {isInvalid && isRequired && (
