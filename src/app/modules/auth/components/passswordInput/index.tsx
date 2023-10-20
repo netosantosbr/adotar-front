@@ -44,7 +44,7 @@ export const PasswordInput: React.FC<IProps> = ({
   }, [isOpen]);
 
   return (
-    <FormControl isInvalid>
+    <FormControl isInvalid={isInvalid}>
       <FormLabel htmlFor={inputIdentifier}>{inputLabel}</FormLabel>
       <InputGroup>
         <InputRightElement>

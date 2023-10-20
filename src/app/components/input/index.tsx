@@ -33,7 +33,7 @@ const InputComponent: React.FC<IProps> = ({
   ...rest
 }) => {
   return (
-    <FormControl isInvalid>
+    <FormControl isInvalid={isInvalid}>
       <FormLabel htmlFor={inputIdentifier}>{inputLabel}</FormLabel>
       <InputGroup>
         <Input
