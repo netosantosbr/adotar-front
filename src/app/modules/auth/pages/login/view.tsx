@@ -1,20 +1,19 @@
-import React from "react";
 import {
   Box,
   Button,
   Checkbox,
   Flex,
   FormControl,
-  FormLabel,
   Heading,
   HStack,
-  Input,
   Stack,
   Text,
 } from "@chakra-ui/react";
-import { PasswordInput } from "../../components/passswordInput";
 import { FormikValues } from "formik";
+import React from "react";
+import { InputComponent } from "../../../../components";
 import AuthLayout from "../../../../layout/auth/AuthLayout";
+import { PasswordInput } from "../../components/passswordInput";
 
 interface IProps {
   validation: FormikValues;
@@ -64,19 +63,31 @@ const LoginView: React.FC<IProps> = ({ validation }) => {
             <Stack spacing='6'>
               <Stack spacing='5'>
                 <FormControl>
-                  <FormLabel htmlFor='email'>Email</FormLabel>
-                  <Input
-                    id='email'
-                    type='text'
-                    value={validation.values.email}
-                    onChange={validation.handleChange}
-                    onBlur={validation.handleBlur}
+                  <InputComponent
+                    inputLabel='Email'
+                    inputIdentifier='email'
+                    isRequired
+                    handleBlur={validation.handleBlur}
+                    handleChange={validation.handleChange}
+                    inputValue={validation.values.email}
+                    isInvalid={
+                      !!(validation.errors.email && validation.touched.email)
+                    }
+                    inputErrorMessage={validation.errors.email}
                   />
                 </FormControl>
                 <PasswordInput
-                  value={validation.values.password}
-                  onChange={validation.handleChange}
-                  onBlur={validation.handleBlur}
+                  inputValue={validation.values.password}
+                  handleChange={validation.handleChange}
+                  handleBlur={validation.handleBlur}
+                  isRequired
+                  inputIdentifier={"password"}
+                  isInvalid={
+                    !!(
+                      validation.errors.password && validation.touched.password
+                    )
+                  }
+                  inputErrorMessage={validation.errors.password}
                 />
               </Stack>
               <HStack justify='space-between'>
