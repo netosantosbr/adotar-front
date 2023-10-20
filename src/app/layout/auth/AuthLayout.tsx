@@ -43,9 +43,7 @@ const AuthLayout = ({ children }: IProps) => {
             w='100%'
             h='100%'
             position='absolute'
-            bgGradient={
-              "linear(to-r, #0b1437, #0a1334, #091230, #09102d, #080f29, #080e26, #070c23, #060b20, #050a1d, #04081a, #020717, #010514)"
-            }
+            bgGradient={"linear(to-r, #1b254b, #111c44, #0b1437)"}
             borderBottomLeftRadius={{ lg: "120", xl: "200" }}
           >
             <Lottie animationData={authAnimation} style={{ width: 400 }} />
