@@ -9,7 +9,7 @@ const Login = () => {
     initialValues: {
       email: "",
       password: "",
-      remember: true,
+      remember: false,
     },
     validationSchema: Yup.object().shape({
       email: Yup.string()
