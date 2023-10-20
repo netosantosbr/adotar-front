@@ -91,7 +91,14 @@ const LoginView: React.FC<IProps> = ({ validation }) => {
                 />
               </Stack>
               <HStack justify='space-between'>
-                <Checkbox defaultChecked={false}>Lembrar de mim</Checkbox>
+                <Checkbox
+                  name='remember'
+                  isChecked={validation.values.remember}
+                  onChange={validation.handleChange}
+                  onBlur={validation.handleBlur}
+                >
+                  Lembrar de mim
+                </Checkbox>
                 <Button variant='text' size='sm'>
                   Esqueceu a senha?
                 </Button>

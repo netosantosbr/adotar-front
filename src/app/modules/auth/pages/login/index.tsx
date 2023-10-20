@@ -9,12 +9,14 @@ const Login = () => {
     initialValues: {
       email: "",
       password: "",
+      remember: true,
     },
     validationSchema: Yup.object().shape({
       email: Yup.string()
         .email("Informe um email válido")
         .required("O campo é obrigatório"),
       password: Yup.string().required("O campo é obrigatório"),
+      remember: Yup.boolean(),
     }),
     onSubmit: (values) => console.log(values),
   });
