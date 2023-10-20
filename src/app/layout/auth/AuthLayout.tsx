@@ -46,7 +46,7 @@ const AuthLayout = ({ children }: IProps) => {
             bgGradient={"linear(to-r, #1b254b, #111c44, #0b1437)"}
             borderBottomLeftRadius={{ lg: "120", xl: "200" }}
           >
-            <Lottie animationData={authAnimation} style={{ width: 400 }} />
+            <Lottie animationData={authAnimation} style={{ width: 500 }} />
           </Flex>
         </Box>
         {/*<Footer />*/}
