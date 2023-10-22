@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { LoginModel } from "../../../modules/auth/models/LoginModel";
+import { LoginResponseModel } from "../../../modules/auth/models/LoginResponseModel";
 import { UserModel } from "../../../modules/auth/models/UserModel";
 
 export interface AuthState {
@@ -7,7 +7,7 @@ export interface AuthState {
   accessToken: string | null;
 }
 
-interface PayloadAuth extends PayloadAction<LoginModel> {}
+interface PayloadAuth extends PayloadAction<LoginResponseModel> {}
 
 const initialState: AuthState = {
   user: null,
