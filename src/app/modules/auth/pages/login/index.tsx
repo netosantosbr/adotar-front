@@ -21,7 +21,9 @@ const Login = () => {
       email: Yup.string()
         .email("Informe um email válido")
         .required("O campo é obrigatório"),
-      password: Yup.string().required("O campo é obrigatório"),
+      password: Yup.string()
+        .min(6, "A senha deve conter no minimo 6 caracteres")
+        .required("O campo é obrigatório"),
       remember: Yup.boolean(),
     }),
     onSubmit: (values) => {
