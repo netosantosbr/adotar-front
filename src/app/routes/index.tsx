@@ -3,10 +3,10 @@ import PublicRoutes from "./PublicRoutes";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import PrivateRoutes from "./PrivateRoutes";
 import App from "../App";
+import { useAppSelector } from "../hook/redux/useRedux";
 
 const Router = () => {
-  // TODO: Replace this after auth is connected
-  const user = false;
+  const { user } = useAppSelector((state) => state.auth);
 
   return (
     <BrowserRouter>
