@@ -5,6 +5,7 @@ import { Box, Flex } from "@chakra-ui/react";
 import Lottie from "lottie-react";
 import { authAnimation } from "../../assets";
 import FooterAuth from "../../components/footerAuth";
+import ThemeToggle from "../../components/themeToggle";
 
 interface IProps {
   children: ReactNode;
@@ -13,6 +14,8 @@ interface IProps {
 const AuthLayout = ({ children }: IProps) => {
   return (
     <Flex position='relative' h='max-content'>
+      <ThemeToggle />
+
       <Flex
         h={{
           sm: "initial",
