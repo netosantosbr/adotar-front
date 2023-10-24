@@ -1,13 +1,13 @@
-import React from "react";
-import LoginView from "./view";
-import * as Yup from "yup";
 import { useFormik } from "formik";
+import React from "react";
+import * as Yup from "yup";
+import usePageTitle from "../../../../hook/pageTitle";
 import useLogin from "../../hook/useLogin";
 import { LoginRequestModel } from "../../models/LoginRequestModel";
-// import { useAppSelector } from "../../../../hook/redux/useRedux";
+import LoginView from "./view";
 
 const Login = () => {
-  // const { user } = useAppSelector((state) => state.auth);
+  usePageTitle({ title: "Login" });
   const { login } = useLogin({});
 
   const validation = useFormik({
