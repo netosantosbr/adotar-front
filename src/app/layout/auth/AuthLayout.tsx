@@ -4,6 +4,7 @@ import { Box, Flex } from "@chakra-ui/react";
 // Custom components
 import Lottie from "lottie-react";
 import { authAnimation } from "../../assets";
+import FooterAuth from "../../components/footerAuth";
 
 interface IProps {
   children: ReactNode;
@@ -49,8 +50,7 @@ const AuthLayout = ({ children }: IProps) => {
             <Lottie animationData={authAnimation} style={{ width: 500 }} />
           </Flex>
         </Box>
-        {/*<Footer />*/}
-        footer here
+        <FooterAuth />
       </Flex>
     </Flex>
   );
