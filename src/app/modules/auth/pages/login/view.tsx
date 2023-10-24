@@ -8,18 +8,23 @@ import {
   HStack,
   Stack,
   Text,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { FormikValues } from "formik";
 import React from "react";
 import { InputComponent } from "../../../../components";
 import AuthLayout from "../../../../layout/auth/AuthLayout";
 import { PasswordInput } from "../../components/passswordInput";
+import { NavLink } from "react-router-dom";
 
 interface IProps {
   validation: FormikValues;
 }
 
 const LoginView: React.FC<IProps> = ({ validation }) => {
+  const textColorDetails = useColorModeValue("navy.700", "secondaryGray.600");
+  const textColorBrand = useColorModeValue("navy.500", "white");
+
   return (
     <AuthLayout>
       <Flex
@@ -110,6 +115,27 @@ const LoginView: React.FC<IProps> = ({ validation }) => {
               </Stack>
             </Stack>
           </form>
+          <Flex
+            flexDirection='column'
+            justifyContent='center'
+            alignItems='start'
+            maxW='100%'
+            mt='6px'
+          >
+            <Text color={textColorDetails} fontWeight='400' fontSize='14px'>
+              Não possui conta?
+              <NavLink to='/auth/cadastro'>
+                <Text
+                  color={textColorBrand}
+                  as='span'
+                  ms='5px'
+                  fontWeight='500'
+                >
+                  Crie uma agora!
+                </Text>
+              </NavLink>
+            </Text>
+          </Flex>
         </Flex>
       </Flex>
     </AuthLayout>
