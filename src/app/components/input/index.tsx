@@ -16,6 +16,7 @@ interface IProps extends InputProps {
   isRequired: boolean;
   handleChange: () => void;
   handleBlur: () => void;
+  hasFloatingLabel?: boolean;
   inputValue: string;
   inputErrorMessage?: string;
   inputIdentifier: string;
@@ -30,10 +31,14 @@ const InputComponent: React.FC<IProps> = ({
   inputValue,
   inputIdentifier,
   isRequired,
+  hasFloatingLabel = false,
   ...rest
 }) => {
   return (
-    <FormControl isInvalid={isInvalid}>
+    <FormControl
+      isInvalid={isInvalid}
+      variant={hasFloatingLabel ? "floating" : ""}
+    >
       <FormLabel htmlFor={inputIdentifier}>{inputLabel}</FormLabel>
       <InputGroup>
         <Input

@@ -14,6 +14,7 @@ import React, { useCallback } from "react";
 import { HiEye, HiEyeOff } from "react-icons/hi";
 
 interface IProps extends InputProps {
+  hasFloatingLabel?: boolean;
   inputLabel?: string;
   inputName?: string;
   isInvalid?: boolean;
@@ -33,6 +34,7 @@ export const PasswordInput: React.FC<IProps> = ({
   handleChange,
   handleBlur,
   inputValue,
+  hasFloatingLabel = false,
   inputErrorMessage,
   inputIdentifier,
   ...rest
@@ -44,7 +46,10 @@ export const PasswordInput: React.FC<IProps> = ({
   }, [isOpen]);
 
   return (
-    <FormControl isInvalid={isInvalid}>
+    <FormControl
+      isInvalid={isInvalid}
+      variant={hasFloatingLabel ? "floating" : ""}
+    >
       <FormLabel htmlFor={inputIdentifier}>{inputLabel}</FormLabel>
       <InputGroup>
         <InputRightElement>
