@@ -37,6 +37,7 @@ export const PasswordInput: React.FC<IProps> = ({
   hasFloatingLabel = false,
   inputErrorMessage,
   inputIdentifier,
+  placeholder,
   ...rest
 }) => {
   const { isOpen, onToggle } = useDisclosure();
@@ -50,7 +51,6 @@ export const PasswordInput: React.FC<IProps> = ({
       isInvalid={isInvalid}
       variant={hasFloatingLabel ? "floating" : ""}
     >
-      <FormLabel htmlFor={inputIdentifier}>{inputLabel}</FormLabel>
       <InputGroup>
         <InputRightElement>
           <IconButton
@@ -68,8 +68,12 @@ export const PasswordInput: React.FC<IProps> = ({
           id={inputIdentifier}
           value={inputValue}
           type={isOpen ? "text" : "password"}
+          placeholder={hasFloatingLabel ? " " : placeholder}
           {...rest}
         />
+
+        <FormLabel htmlFor={inputIdentifier}>{inputLabel}</FormLabel>
+
         {isInvalid && isRequired && (
           <InputRightElement>
             <WarningIcon color='red.600' />

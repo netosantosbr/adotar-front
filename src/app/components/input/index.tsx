@@ -32,6 +32,7 @@ const InputComponent: React.FC<IProps> = ({
   inputIdentifier,
   isRequired,
   hasFloatingLabel = false,
+  placeholder,
   ...rest
 }) => {
   return (
@@ -39,7 +40,6 @@ const InputComponent: React.FC<IProps> = ({
       isInvalid={isInvalid}
       variant={hasFloatingLabel ? "floating" : ""}
     >
-      <FormLabel htmlFor={inputIdentifier}>{inputLabel}</FormLabel>
       <InputGroup>
         <Input
           onChange={handleChange}
@@ -47,9 +47,13 @@ const InputComponent: React.FC<IProps> = ({
           name={inputIdentifier}
           id={inputIdentifier}
           value={inputValue}
+          placeholder={hasFloatingLabel ? " " : placeholder}
           type='text'
           {...rest}
         />
+
+        <FormLabel htmlFor={inputIdentifier}>{inputLabel}</FormLabel>
+
         {isInvalid && isRequired && (
           <InputRightElement>
             <WarningIcon color='red.600' />
