@@ -49,4 +49,4 @@ The Adotar API was developed using TypeScript and React JS, leveraging the robus
 
 ## Learnings
 
-I learned to use the React JS framework to develop a Frontend application with essential functionalities: fetching data, updating, patching, creating, and deleting resources.
+I learned to use the React JS framework to develop a Frontend application with essential functionalities: fetching data, updating, patching, creating, and deleting resources. :)
