@@ -1,21 +1,24 @@
 import {
   Box,
   Button,
+  Center,
   Checkbox,
   Flex,
   FormControl,
   Heading,
   HStack,
+  Image,
   Stack,
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
 import { FormikValues } from "formik";
 import React from "react";
+import { NavLink } from "react-router-dom";
+import { logo } from "../../../../assets";
 import { InputComponent } from "../../../../components";
 import AuthLayout from "../../../../layout/auth/AuthLayout";
 import { PasswordInput } from "../../components/passswordInput";
-import { NavLink } from "react-router-dom";
 
 interface IProps {
   validation: FormikValues;
@@ -40,6 +43,9 @@ const LoginView: React.FC<IProps> = ({ validation }) => {
         mt={{ base: "40px", md: "14vh" }}
         flexDirection='column'
       >
+        <Center w={"100%"} mb={"6"}>
+          <Image src={logo} w={100} />
+        </Center>
         <Box me='auto'>
           <Heading fontSize='36px' mb='10px'>
             Entrar
