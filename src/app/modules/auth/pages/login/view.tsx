@@ -69,6 +69,7 @@ const LoginView: React.FC<IProps> = ({ validation }) => {
               <Stack spacing='5'>
                 <FormControl>
                   <InputComponent
+                    hasFloatingLabel
                     inputLabel='Email'
                     inputIdentifier='email'
                     isRequired
@@ -82,6 +83,7 @@ const LoginView: React.FC<IProps> = ({ validation }) => {
                   />
                 </FormControl>
                 <PasswordInput
+                  hasFloatingLabel
                   inputValue={validation.values.password}
                   handleChange={validation.handleChange}
                   handleBlur={validation.handleBlur}
@@ -104,9 +106,6 @@ const LoginView: React.FC<IProps> = ({ validation }) => {
                 >
                   Lembrar de mim
                 </Checkbox>
-                <Button variant='text' size='sm'>
-                  Esqueceu a senha?
-                </Button>
               </HStack>
               <Stack spacing='6'>
                 <Button type={"submit"} colorScheme={"navy"}>
@@ -116,12 +115,23 @@ const LoginView: React.FC<IProps> = ({ validation }) => {
             </Stack>
           </form>
           <Flex
-            flexDirection='column'
-            justifyContent='center'
+            flexDirection='row'
+            justifyContent='space-between'
             alignItems='start'
             maxW='100%'
-            mt='6px'
+            mt='10px'
           >
+            <NavLink to='#'>
+              <Text
+                color={textColorDetails}
+                as='span'
+                size={"sm"}
+                fontWeight='400'
+                fontSize='14px'
+              >
+                Esqueceu a senha?
+              </Text>
+            </NavLink>
             <Text color={textColorDetails} fontWeight='400' fontSize='14px'>
               Não possui conta?
               <NavLink to='/auth/cadastro'>
