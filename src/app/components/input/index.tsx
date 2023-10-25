@@ -40,6 +40,9 @@ const InputComponent: React.FC<IProps> = ({
       isInvalid={isInvalid}
       variant={hasFloatingLabel ? "floating" : ""}
     >
+      {!hasFloatingLabel ? (
+        <FormLabel htmlFor={inputIdentifier}>{inputLabel}</FormLabel>
+      ) : null}
       <InputGroup>
         <Input
           onChange={handleChange}
@@ -52,7 +55,9 @@ const InputComponent: React.FC<IProps> = ({
           {...rest}
         />
 
-        <FormLabel htmlFor={inputIdentifier}>{inputLabel}</FormLabel>
+        {hasFloatingLabel ? (
+          <FormLabel htmlFor={inputIdentifier}>{inputLabel}</FormLabel>
+        ) : null}
 
         {isInvalid && isRequired && (
           <InputRightElement>
